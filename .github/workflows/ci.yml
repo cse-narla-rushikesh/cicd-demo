@@ -2,9 +2,9 @@ name: Build and Test Spring Boot
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 jobs:
   build:
@@ -22,4 +22,6 @@ jobs:
           distribution: 'temurin'
 
       - name: Build & test with Maven
-        run: mvn clean verify
+        run: |
+          cd cicd-demo1
+          mvn clean verify
