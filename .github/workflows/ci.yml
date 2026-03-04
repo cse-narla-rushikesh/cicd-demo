@@ -39,3 +39,6 @@ jobs:
     - name: Push Docker Image
       run: |
         docker push narlarushikesh/spring-cicd-demo:latest
+
+    - name: Trigger Render Deploy
+      run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
